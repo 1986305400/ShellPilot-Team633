@@ -1,0 +1,10 @@
+/.spt-venv/
+/.spt-runtime/
+/.spt-state/
+__pycache__/
+*.py[cod]
+*.gguf
+*.log
+agent.token
+.env
+.env.*

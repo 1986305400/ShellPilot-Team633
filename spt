@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+script=$(readlink -f -- "${BASH_SOURCE[0]}")
+project=${script%/*}
+python=${SPT_PYTHON:-"$project/.spt-venv/bin/python"}
+if [[ ! -x "$python" ]]; then
+    printf 'ShellPilot Python not found: %s\n' "$python" >&2
+    exit 127
+fi
+exec "$python" "$project/shellpilot_cli.py" "$@"
